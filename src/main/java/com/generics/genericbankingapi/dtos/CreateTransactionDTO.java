@@ -4,5 +4,5 @@ import com.generics.genericbankingapi.enums.TransactionType;
 
 import java.math.BigDecimal;
 
-public record TransactionCreationDTO(TransactionType transactionType,BigDecimal amount) {
+public record CreateTransactionDTO(TransactionType transactionType, BigDecimal amount) {
 }

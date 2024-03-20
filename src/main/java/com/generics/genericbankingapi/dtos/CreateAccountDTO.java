@@ -1,4 +1,4 @@
 package com.generics.genericbankingapi.dtos;
 
-public record AccountCreationDTO() {
+public record CreateAccountDTO() {
 }
