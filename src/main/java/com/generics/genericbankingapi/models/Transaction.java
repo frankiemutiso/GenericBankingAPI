@@ -1,21 +1,23 @@
 package com.generics.genericbankingapi.models;
 
 import com.generics.genericbankingapi.enums.TransactionType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
 @Entity
+@Table(name = "transactions")
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+    @Column(name = "transaction_type")
     private TransactionType transactionType;
+    @Column(name = "amount")
     private BigDecimal amount;
-    public void setId(long id) {
+
+    public void setId(int id) {
         this.id = id;
     }
     public long getId() {

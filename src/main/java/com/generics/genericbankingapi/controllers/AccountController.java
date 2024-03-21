@@ -3,18 +3,19 @@ package com.generics.genericbankingapi.controllers;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("api/accounts/")
 public class AccountController {
-    @GetMapping("api/accounts/all")
+    @GetMapping("all")
     public String getAllAccounts(){
         return "Accounts";
     }
-    @GetMapping("api/accounts/{accountId}")
+    @GetMapping("{accountId}")
     public String getAccountById(@PathVariable Long accountId){
         return String.format("%s", accountId);
     }
-    @PostMapping("api/accounts")
+    @PostMapping("")
     public void createAccount(){}
-    @DeleteMapping("api/accounts/{accountId}")
+    @DeleteMapping("{accountId}")
     public String deactivateAccount(@PathVariable Long accountId){
         return String.format("%s", accountId);
     }
